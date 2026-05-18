@@ -1,0 +1,3 @@
+Capture information of 2 users. This information includes their name, age and height (in cm).
+Display each user's information in a sentence format.
+Then calculate and display the total combined height of both users.
