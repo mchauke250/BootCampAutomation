@@ -20,16 +20,9 @@ public class loginPage {
     public void clickLoginButtonTest() throws InterruptedException {
         //Locating the login button
         driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[3]/button")).click();
-        //Validation that we can see the text the after logging in
         //driver.findElement(By.xpath("/html/body/div/div/main/section/div[1]/div[1]/h2/span[3]")).isDisplayed();
-        //System.out.println("Successfully Logged in to Ndosi Automation Website ");
         //Thread.sleep(2000);
-        // driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[2]/div[1]/button/span[2]")).click();
-        //driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[2]/div[1]/div/button[2]/span[2]")).click();
-        //driver.findElement(By.xpath("//*[@id=\"tab-btn-password\"]/span[2]")).click();
     }
-    //Filling in the form and submitting
-
     //@Test(priority = 1)
     @Test(dependsOnMethods = "clickLoginButtonTest")
     public void enterEmailTest() {
@@ -46,6 +39,7 @@ public class loginPage {
     @Test(dependsOnMethods = "enterPasswordTest")
     public void clickSubmitButtonTest() throws InterruptedException {
         driver.findElement(By.id("login-submit")).click();
+        System.out.println("Successfully Logged in to Ndosi Automation Website ");
         Thread.sleep(5000);
     }
 
@@ -69,14 +63,19 @@ public class loginPage {
     }
 
     @Test(dependsOnMethods = "selectLearningMaterialTest")
-    public void navigateToBasicformTest(){
+    public void navigateToBasicformTest() {
         driver.findElement(By.xpath("//*[@id=\"tab-btn-password\"]/span[2]")).click();
         System.out.println("Successfully Navigated to the Basic Form");
     }
 
-    /*@AfterTest
-    public  void closeBrowser(){
+    @Test(dependsOnMethods = "navigateToBasicformTest")
+    public void formInstructionsTest() {
+        driver.findElement(By.xpath("//*[@id=\"basic-form-requirements\"]/summary")).click();
+    }
+
+    @AfterTest
+    public void closeBrowser() {
         driver.quit(); //Closing the Browser
-    }*/
+    }
 
 }
