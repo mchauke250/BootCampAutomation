@@ -1,3 +1,5 @@
+package basic;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -53,7 +55,7 @@ public class loginPage {
     @Test(dependsOnMethods = "loginVerificationTest")
     public void clickLearnTest() throws InterruptedException {
         driver.findElement(By.xpath("//*[@id=\"app-root\"]/nav/div[1]/div[2]/div[1]/button")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @Test(dependsOnMethods = "clickLearnTest")
