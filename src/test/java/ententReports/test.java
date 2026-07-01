@@ -1,4 +1,4 @@
-package EntentReports;
+package ententReports;
 
 public class test {
 }
