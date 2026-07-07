@@ -17,7 +17,7 @@ public class BrowserFactory {
 
         if(browserType.equalsIgnoreCase("edge")){
             EdgeOptions options = new EdgeOptions();
-            options.addArguments("--incognito");
+            options.addArguments("--InPrivate");
             driver = new EdgeDriver(options);
 
         }else if(browserType.equalsIgnoreCase("Chrome")){
